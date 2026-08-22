@@ -1,4 +1,4 @@
-# Get Set Up
+# Lesson 0: Get Set Up
 
 To program the Arduino, download and install the Arduino IDE. IDE stands for Integrated Development Environment. It is where code can be created, compiled, and flashed to the Arduino board. Below are instructions on how to install the Arduino IDE on Windows or Chrome Book.
 
