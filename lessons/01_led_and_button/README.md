@@ -12,7 +12,9 @@ The three functions used to configure pins are listed below:
 
 **parameters:**
 1. **pin** - the number identifying the pin that you want to configure
-2. **configuration** - specifies if you want the pin to be input or output (literally set it as INPUT or OUTPUT)
+2. **configuration** - specifies if you want the pin to be input or output (INPUT, INPUT_PULLUP, or OUTPUT)
+
+NOTE: when reading a button, it should be configured as INPUT_PULLUP. If it is configured as INPUT, the pin will float, meaning the voltage can move freely and may be high or low without clicking the button. INPUT_PULLUP means that the pin will be forced high unless the button is pressed.
 
 **examples:**
 ```
@@ -25,6 +27,12 @@ pinMode(5, OUTPUT);
 configure pin 6 as input:
 
 pinMode(6, INPUT);
+```
+
+```
+configure pin 6 as input with a pull up resistor
+
+pinMode(6, INPUT_PULLUP)
 ```
 
 ## digitalWrite
@@ -109,7 +117,7 @@ The wiring for this lesson should be the same as shown in the below schematic. M
 
 # Requirements
 
-Whenever the button is held down, the LED should turn on. Whenever the button is not being held down, the LED should be off.
+Whenever the button is held down, the LED should turn off. Whenever the button is not being held down, the LED should be on.
 
 Below is a template to help you get started.
 
