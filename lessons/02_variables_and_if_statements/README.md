@@ -313,7 +313,7 @@ Logical operators include:
 - ||
 - !
 
-# && (AND)
+## && (AND)
 
 - The conditions on both side of && must be true for the enire condition to be true
 
@@ -374,7 +374,7 @@ if ((my_number < 8) && (my_other_number > my_number))
 // my_number will be 0 after this code runs
 ```
 
-# || (OR)
+## || (OR)
 
 - Only the conditions on one side of || must be true for the enire condition to be true. Both sides can also be true for the entire condition to be true.
 
