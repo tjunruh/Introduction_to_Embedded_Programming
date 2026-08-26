@@ -1,6 +1,6 @@
 # Lesson 3: Arithmatic Operators and For Loops
 
-## Coding Tools
+# Coding Tools
 
 ## Arithmetic Operators
 
@@ -172,8 +172,6 @@ analogWrite is a function provided by the Arduino IDE. You will be learning abou
 analogWrite uses PWM (Pulse Width Modulation). PWM involves a steady pulse that will be high for a certain percentage of the pulse, and it will be low for the remaining percentage. The percentage that the pulse is high is referred to as the "Duty Cycle". Below is a visual example.
 
 ![Duty Cycle](../../pictures/lessons/03_arithmatic_operators_and_for_loops/pwm_duty_cycle.jpeg)
-
-## analogWrite
 
 **analogWrite(pin, pwm_level);**
 
