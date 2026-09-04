@@ -1,5 +1,5 @@
 # Introduction_to_Embedded_Programming
-Contains documentation and example code to learn C coding and apply it with ATMega328P microcontroller
+This repository contains documentation and example code to learn C coding and apply it with ATMega328P microcontroller. Lessons and projects go into detail about what new coding tools and electrical components will be used in each lesson or project. While what you need to complete the lesson or project is covered, step by step instructions on how to complete the assignment are not provided. Lessons and projects can be thought of as a road that is built on two sides of a river, but the bridge to cross the river is not complete. You must make the bridge over the river to connect the two roads.
 
 # Lessons
 - [Lesson 0: Get Setup](lessons/00_get_setup/README.md)
@@ -13,6 +13,7 @@ Contains documentation and example code to learn C coding and apply it with ATMe
 
 ## Level 0
 - [Temperature Sensor](projects/level_0/temperature_sensor/README.md)
+
 ## Level 1
 
 coming soon
