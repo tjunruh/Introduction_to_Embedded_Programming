@@ -10,6 +10,8 @@ The three functions used to configure pins are listed below:
 
 **pinMode(pin, configuration);**
 
+pinMode is used to define if a pin is to be used to send signals out of the microcontroller or receive them into the microcontroller.
+
 **parameters:**
 1. **pin** - the number identifying the pin that you want to configure
 2. **configuration** - specifies if you want the pin to be input or output (INPUT, INPUT_PULLUP, or OUTPUT)
@@ -39,6 +41,8 @@ pinMode(6, INPUT_PULLUP)
 
 **digitalWrite(pin, state);**
 
+digitalWrite is used to send a signal out of the microcontroller.
+
 **parameters:**
 1. **pin** - the number of pin identifying the pin that you want to configure
 2. **state** - specifies if you want the pin to be high or low (literally set it as HIGH or LOW)
@@ -61,6 +65,8 @@ digitalWrite(5, LOW);
 ## digitalRead
 
 **int state = digitalRead(pin);**
+
+digital read is used to receive signals into the microcontroller.
 
 **parameters:**
 1. **state** - the value returned that informs you if the pin is high or low (it will be equal to either HIGH or LOW)
