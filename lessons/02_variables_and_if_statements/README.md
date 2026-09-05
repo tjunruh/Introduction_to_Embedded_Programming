@@ -17,11 +17,11 @@ The int type (short for integer) is used to store whole numbers.
 
 **example**
 ```
-Create a variable of int type called my_number and assign 1 to it:
+// Create a variable of int type called my_number and assign 1 to it:
 
 int my_number = 1;
 
-my_number can be assigned new values after it is initialized also (if it is already initialized, don't place int in front of it again):
+// my_number can be assigned new values after it is initialized also (if it is already initialized, don't place int in front of it again):
 
 my_number = 10;
 
@@ -34,11 +34,11 @@ The float type (short for floating point number) is used to store rational numbe
 
 **example**
 ```
-Create a variable of float type called my_number and assign 1.23 to it:
+// Create a variable of float type called my_number and assign 1.23 to it:
 
 float my_number = 1.23;
 
-like in the int example, float can take new values after initialized:
+// like in the int example, float can take new values after initialized:
 
 my_number = -1.23;
 
@@ -51,11 +51,11 @@ The bool type (short for boolean) is used to store binary values (true or false)
 
 **example**
 ```
-Create a variable of bool type called time_to_program and assign true to it:
+// Create a variable of bool type called time_to_program and assign true to it:
 
 bool time_to_program = true;
 
-time_to_program can be assigned false also:
+// time_to_program can be assigned false also:
 
 time_to_program = false;
 ```
@@ -66,11 +66,11 @@ The char type (short for character) is used to store a single character (a, b, c
 
 **example**
 ```
-Create a variable of char type called my_character and assign 't' to it (characters must always be surrounded by single quotation marks):
+// Create a variable of char type called my_character and assign 't' to it (characters must always be surrounded by single quotation marks):
 
 char my_character = 't';
 
-my_character can be assigned other values afterwards:
+// my_character can be assigned other values afterwards:
 
 my_character = 'a';
 
@@ -81,13 +81,13 @@ In all the above examples, the variables could be assigned new values after bein
 
 **example**
 ```
-Create an int variable called my_number, assign it 1, and make it so that the number cannot be changed:
+// Create an int variable called my_number, assign it 1, and make it so that the number cannot be changed:
 
 const int my_number = 1;
 
 my_number = 2; // <- this will not work
 
-NOTE: const can be used on all variables, not just int.
+// NOTE: const can be used on all variables, not just int.
 ```
 
 ## Boolean Operations
@@ -111,11 +111,12 @@ First, it is important to understand what sort of conditions could be evaluated 
 
 Operators for comparision include:
 
-- <
-- \>
-- =<
-- \>=
-- ==
+- < (less than)
+- \> (greater than)
+- =< (less than or equal)
+- \>= (greater than or equal)
+- == (equal)
+- != (not equal)
 
 ## < (less than)
 
@@ -305,13 +306,41 @@ if (my_number == 10)
 // my_number will equal 5 after this code runs
 ```
 
+## != (not equal)
+
+- If the value on the right side of != does not equal the value on the left, the condition will be evaluated to true.
+- If the values are equal, the condition will be evaluated to false.
+
+**examples**
+```
+int my_number = 5;
+
+int (my_number != 10)
+{
+	my_number = 0;
+}
+
+// my_number will equal 0 after this code runs
+```
+
+```
+int my_number = 5;
+
+if (my_number != 5)
+{
+	my_number = 0;
+}
+
+// my_number will equal 5 after this code runs
+```
+
 ## Logical
 
 Logical operators include:
 
-- &&
-- ||
-- !
+- && (AND)
+- || (OR)
+- ! (NOT)
 
 ## && (AND)
 
