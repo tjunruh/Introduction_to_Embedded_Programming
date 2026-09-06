@@ -53,9 +53,11 @@ Pins to control which digit is on (digit goes low to turn on digit)
 
 # Requirements
 
-Use the thermistor to create a temperature sensor that displays the temperature in Fahrenheit on the 4 digit 7 segment display. The display only need display numbers from 00.00 to 99.99. The decimal place will be in the middle. The schematic for the project is shown below.
+Use the thermistor to create a temperature sensor that displays the temperature in Fahrenheit on the 4 digit 7 segment display. The display only need display numbers from 00.00 to 99.99. The decimal place will be in the middle. The schematic (and a picture) for the project is shown below.
 
 ![schematic](../../../pictures/projects/level_0/temperature_sensor/temperature_sensor_schematic.jpg)
+
+![wiring picture](../../../pictures/projects/level_0/temperature_sensor/temperature_sensor_wiring_picture.jpg)
 
 You can think of programming for this project in three steps.
 
