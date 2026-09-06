@@ -6,13 +6,13 @@
 
 Arithmetic operators are used to do mathematical operations on numbers. They include the following:
 
-- \+
-- \-
-- \*
-- /
-- %
-- ++
-- \--
+- \+ (addition)
+- \- (subtraction)
+- \* (multiplication)
+- / (division)
+- % (modulus)
+- ++ (increment)
+- \-- (decrement)
 
 ## + (addition)
 
@@ -53,9 +53,9 @@ The / operator divides one number by another
 
 **example**
 ```
-int my_number = 4 / 2; my_number equals 2
+int my_number = 4 / 2; // my_number equals 2
 
-my_number = my_number / 2; my_number equals 1
+my_number = my_number / 2; // my_number equals 1
 ```
 
 ## % (modulus)
@@ -175,11 +175,11 @@ analogWrite uses PWM (Pulse Width Modulation). PWM involves a steady pulse that 
 
 **analogWrite(pin, pwm_level);**
 
+analogWrite is used to send an "analog" signal out of the microcontroller.
+
 **parameters:**
 1. **pin** - the number of pin identifying the pin that you want to configure
-2. **pwm_level** - specifies the duty cycle as a level 0 to 255 (so duty cycle would be pwm_level / 255)
-
-NOTE: digitalWrite should only be used on pins that have been configured as output using pinMode
+2. **pwm_level** - specifies the duty cycle as a level 0 to 255 (so duty cycle would be (pwm_level / 255) * 100)
 
 **examples:**
 ```
@@ -206,6 +206,19 @@ One cool use for this is changing the brightness of an LED. The higher the duty 
 
 For this lesson, use the same electrical components as in lesson 1 with the same wiring minus the button (you can leave the button there if you want, but we will not be using it)
 
-Create two for loops. One increments from 0 to 255, increasing the duty cycle so that the LED keeps getting brighter. Place a 10 millisecond delay in the for loop. The second decrements from 255 to 0, decreasing the duty cycle so that the LED keeps getting dimmer. Place a 10 millisecond delay in the for loop. The end result should be that the LED keeps getting brighter and dimmer over and over again.
+Create two for loops. One increments from 0 to 255, increasing the duty cycle so that the LED keeps getting brighter. Place a 10 millisecond delay in the for loop. The second decrements from 255 to 0, decreasing the duty cycle so that the LED keeps getting dimmer. Place a 10 millisecond delay in the for loop. The end result should be that the LED keeps getting brighter and dimmer over and over again. A template to help you get started is below.
 
-There is no template for this lesson. See if you can get started on your own.
+```
+void setup()
+{
+  // configure pin 5
+
+}
+
+void loop()
+{
+  // Create a for loop that goes from 0 to 255. It should make the LED get gradually brighter
+
+  // Create another for loop that goes from 255 to 0. It should make the LED get gradually dimmer.
+}
+```

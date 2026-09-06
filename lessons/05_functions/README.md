@@ -56,13 +56,41 @@ void turn_pin_5_off()
 turn_pin_5_off();
 ```
 
+## analogRead
+
+analogRead is a function used to get the analog value of a pin. Like with analogWrite, "analog" is an illusion. Instead of being able to measure any value between 0 and 5 volts, the range is divided into 1024 levels. So the resolution is 5/1024 = 0.00488 volts, which means it is not possible to detect a change in voltage less than 0.00488 volts. Note analogRead only works on the following pins: A0, A1, A2, A3, A4, A5
+
+**int analogRead(pin)**
+
+analogRead is used to receive analog signals into the microcontroller.
+
+**parameters**
+1. pin - the number of pin identifying the pin that you want to read an analog signal from
+
+**Return value**
+
+int - a value 0 to 1023 that represents the amount of voltage being measured
+
+**example**
+```
+// Read the voltage measured on A0
+
+int voltage_level = analogRead(A0);
+```
+
 # Electrical Components
 
-RGB LED
+## RGB LED
 
 The RGB LED can change its color to be a wide range of colors because it has three LEDs inside it (Red, Green, and Blue). By changing the duty cycle of pwm going to each color of LED, it is possible to make different colors. The RGB LED that comes with the Arduino kit is shown below:
 
 ![RGB LED](../../pictures/lessons/05_functions/Arduino-RGB-LED-Pinout.jpg)
+
+## Potentiometer
+
+A potentiometer acts as a variable resistor. This means that its resistance can be changed, which will change the voltage that comes out of it. For example, if 5V goes into the potentiometer and the knob is turned half way, 2.5 volts would come out, assuming the potentiometer is linear. A picture of a potentiometer is shown below:
+
+![potentiometer](../../pictures/lessons/05_functions/potentiometer.jpg)
 
 # Requirements
 
@@ -74,11 +102,12 @@ The potentiometer should be used to change the brightness of one of the colors o
 
 You are required to create two functions to help accomplish this. 
 
-One function should be called apply_rgb and be used to set the brightness of one of the colors in the RGB LED. It should not return anything, and it should have two arguments. One argument should be int type and the other char type. The int type should be the value provided from the analogRead function on pin A0 from the potentiometer. The char type argument should be a variable that is either 'r', 'g', or 'b'. If the char argument is 'r', the int argument from the potentiometer should be converted to a valid pwm number (0 to 255) and applied to the red pin of the RGB LED. The same process applies when the char argument is 'g' or 'b', except the green or blue LED's brightness is changed with pwm using analogWrite.
+One function should be called apply_rgb and be used to set the brightness of one of the colors in the RGB LED. It should not return anything, and it should have two arguments. One argument should be int type and the other char type. The int type should be a value in the range 0 to 255 that is used in analogWrite to set the brightness of one of the colors of the RGB LED. The char type argument should be a variable that is either 'r', 'g', or 'b'. If the char argument is 'r', the int argument should be applied to the red pin of the RGB LED. The same process applies when the char argument is 'g' or 'b', except the green or blue LED's brightness is changed with pwm using analogWrite.
 
-The second function should be called increment_rgb and be used to change which color that is being adjusted of the RGB LED. It should return a char, and it should have one argument that is a char. This char argument should be 'r', 'g', or 'b'. If the argument is 'r', then the function should return 'g'. If the argument is g, the function should return 'b'. If the argument is 'b' or any other value, it should return 'r'. Notice that there are three LEDs shown in the above schematic other than the RGB LED. These three LEDs are colored red, green, and blue. These are used to indicate which color of the RGB LED is being adjusted. So, the increment_rgb function will perform a second task because it needs to turn on one of those three LEDs depending on what color it incremented to.
+The second function should be called increment_rgb and be used to change the RGB LED color that is being adjusted. It should return a char, and it should have one argument that is a char. This char argument should be 'r', 'g', or 'b'. If the argument is 'r', then the function should return 'g'. If the argument is g, the function should return 'b'. If the argument is 'b' or any other value, it should return 'r'. Notice that there are three LEDs shown in the above schematic other than the RGB LED. These three LEDs are colored red, green, and blue. These are used to indicate which color of the RGB LED is being adjusted. So, the increment_rgb function will perform a second task because it needs to turn on one of those three LEDs depending on what color it incremented to.
 
 Below is a template to help you get started. Notice that most of the loop function is already complete. You just need to add the condition in the if statement. Your main assignment is creating the apply_rgb and increment_rgb functions. You also need to configure pins in setup.
+
 
 ```
 int button_state = 1;
@@ -103,8 +132,30 @@ void loop()
     rgb = increment_rgb(rgb);
   }
 
-  int rgb_strength = analogRead(A0);
+  int analog_signal = analogRead(A0);
+  int rgb_strength = (int)((float)analog_signal * (255.0 / 1023.0)); // convert analog_signal (a value 0 to 1023) to a value 0 to 255
   apply_rgb(rgb_strength, rgb);
   delay(10);
 }
 ```
+
+Extra Information:
+
+Notice how analog_signal is converted to rgb_strength. Basically, a number that can be 0 to 1023 is converted to a number that can be 0 to 255. Here is the explanation on how this is done. 5 volts is used because that is the voltage provided by the Arduino board.
+
+```
+analog_signal X (5 volts / 1023) X (255 / 5 volts)
+
+equals:
+
+analog_signal X (255 / 1023)
+```
+
+In code, this would be:
+
+```
+int analog_signal = analogRead(A0);
+int pwm_signal = (int)((float)analog_signal * (255.0 / 1023.0));
+```
+
+NOTE: The use of (int) and (float) is used to cast the numbers as different types. analog_signal was an integer, but (float)analog_signal means that it is interpreted as a float. 255 instead of 255.0 and 1023.0 instead of 1023 means that they are treated as floats instead of integers. If they were integers, 255 / 1023 would equal 0 instead of 0.249 (If the result of 255 / 1023 is an integer, it is rounded down to the nearest whole number, which is 0). After everything is evaluated, it is cast as an integer since analogWrite takes an integer, not a float.

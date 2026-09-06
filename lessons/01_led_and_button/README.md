@@ -66,7 +66,7 @@ digitalWrite(5, LOW);
 
 **int state = digitalRead(pin);**
 
-digital read is used to receive signals into the microcontroller.
+digitalRead is used to receive signals into the microcontroller.
 
 **parameters:**
 1. **state** - the value returned that informs you if the pin is high or low (it will be equal to either HIGH or LOW)
