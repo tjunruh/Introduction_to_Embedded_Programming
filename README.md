@@ -10,6 +10,7 @@ This repository contains documentation and example code to learn C coding and ap
 - [Lesson 5: Functions](lessons/05_functions/README.md)
 - [Lesson 6: Structures](lessons/06_structures/README.md)
 - [Lesson 7: Arrays](lessons/07_arrays/README.md)
+- [Lesson 8: Interrupts](lessons/08_interrupts/README.md)
 
 # Projects
 
