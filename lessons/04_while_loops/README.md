@@ -1,4 +1,4 @@
-# Lesson 4: Wile Loops
+# Lesson 4: While Loops
 
 # Coding Tools
 
