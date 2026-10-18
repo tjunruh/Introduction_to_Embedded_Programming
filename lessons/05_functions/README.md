@@ -120,13 +120,13 @@ char rgb = 'r';
 
 void setup()
 {
-  // configure pins 3, 4, 5, 6, 9, 10, and 11
+  // configure pins 3, 5, 6, 9, 10, 11, and 12
 }
 
 void loop()
 {
   previous_button_state = button_state;
-  button_state = digitalRead(4);
+  button_state = digitalRead(12);
   if (// add condition for when the button is released )
   {
     rgb = increment_rgb(rgb);
