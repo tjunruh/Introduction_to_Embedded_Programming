@@ -6,25 +6,25 @@
 
 Thermistors are like resistors except that their resistance changes in relation to temperature. This means that the voltage will also change and can be measured by the microcontroller to determine the temperature. A picture of a thermistor is shown below.
 
-![thermistor](../../../pictures/projects/level_0/temperature_sensor/thermistor.jpeg)
+![thermistor](../../pictures/projects/temperature_sensor/thermistor.jpeg)
 
 Thermistors' resistance decreases as temperature increases as shown in the figure below.
 
-![thermistor graph](../../../pictures/projects/level_0/temperature_sensor/thermistor_graph.jpg)
+![thermistor graph](../../pictures/projects/temperature_sensor/thermistor_graph.jpg)
 
 ## 4 Digit 7 Segment Display
 
 4 digit refers to being able to display 4 numbers. 7 segment refers to there being 7 independent lights used to display any number. Note that there is actually an eighth light as well for the decimal point. A picture of a 4 digit 7 segment display is shown below.
 
-![4 digit 7 segment display](../../../pictures/projects/level_0/temperature_sensor/4_digit_7_segment_display.jpeg)
+![4 digit 7 segment display](../../pictures/projects/temperature_sensor/4_digit_7_segment_display.jpeg)
 
 Here are pictures of how the 12 pins on the display are numbered and what LEDs they control.
 
-![4 digit 7 segment display numbers](../../../pictures/projects/level_0/temperature_sensor/4_digit_7_segment_display_pin_numbers.jpg)
+![4 digit 7 segment display numbers](../../pictures/projects/temperature_sensor/4_digit_7_segment_display_pin_numbers.jpg)
 
-![4 digit 7 segment display segment letters](../../../pictures/projects/level_0/temperature_sensor/4_digit_7_segment_display_segment_letters.jpg)
+![4 digit 7 segment display segment letters](../../pictures/projects/temperature_sensor/4_digit_7_segment_display_segment_letters.jpg)
 
-![4 digit 7 segment display pin to segment mapping](../../../pictures/projects/level_0/temperature_sensor/4_digit_7_segment_display_pin_to_segment_mapping.jpg)
+![4 digit 7 segment display pin to segment mapping](../../pictures/projects/temperature_sensor/4_digit_7_segment_display_pin_to_segment_mapping.jpg)
 
 Because there are 4 digits that all have 8 LEDs, there is a total of 32 LEDs. However, there are only 12 pins. So, how can all the LEDs be controlled? The answer is that only one digit can be displayed at a time. 8 of the 12 pins control which segments are on in a single digit while the remaining 4 pins control which digit is currently displayed. Having all four digits on at once is an illusion. Each digit is turned on for a very short period of time, say 1 millisecond. Then, the next digit is turned on. This keeps repeating over and over. Because the switch happens so fast, human eyes do not perceive that only one digit is on at a time. Instead, it looks like all four are on.
 
@@ -55,9 +55,9 @@ Pins to control which digit is on (digit goes low to turn on digit)
 
 Use the thermistor to create a temperature sensor that displays the temperature in Fahrenheit on the 4 digit 7 segment display. The display only need display numbers from 00.00 to 99.99. The decimal place will be in the middle. The schematic and a picture for the project is shown below.
 
-![schematic](../../../pictures/projects/level_0/temperature_sensor/temperature_sensor_schematic.jpg)
+![schematic](../../pictures/projects/temperature_sensor/temperature_sensor_schematic.jpg)
 
-![wiring picture](../../../pictures/projects/level_0/temperature_sensor/temperature_sensor_wiring_picture.jpg)
+![wiring picture](../../pictures/projects/temperature_sensor/temperature_sensor_wiring_picture.jpg)
 
 You can think of programming for this project in three steps.
 
