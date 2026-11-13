@@ -252,3 +252,7 @@ void loop()
 }
 
 ```
+
+# Datasheet
+
+[LCD datasheet](../../pictures/projects/lcd_library/lcd_datasheet.pdf)
