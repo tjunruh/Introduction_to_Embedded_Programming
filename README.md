@@ -13,5 +13,6 @@ This repository contains documentation and example code to learn C coding and ap
 - [Lesson 8: Interrupts](lessons/08_interrupts/README.md)
 
 # Projects
-- [Temperature Sensor](projects/temperature_sensor/README.md)
 - [Memory Game](projects/memory_game/README.md)
+- [Temperature Sensor](projects/temperature_sensor/README.md)
+- [LCD Library](projects/lcd_library/README.md)
