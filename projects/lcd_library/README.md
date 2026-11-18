@@ -72,6 +72,7 @@ void clear_display()
 {
   write_command(0b0000);
   write_command(0b0001);
+  delay(2);
 }
 
 void turn_display_on(bool on)
